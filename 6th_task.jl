@@ -5,37 +5,30 @@ r = Robot("untitled.sit", animate=true)
 include("import_modules.jl")
 
 
-function difficult_coord!(r)
-    x = 0
-    y = 0
-    while !isborder(r, West) | !isborder(r, Sud)
-        if !isborder(r, West)
-            x += 1
-            move!(r, West)
-        else 
-            y += 1
-            move!(r, Sud)
-        end
-    end
-    return x, y
+function do_dot!(r, d, l)
+    for i in 0:l
+        move!(r, d)
+    putmarker!(r)
+    along!(r, inverse(d))
 end
 
 
-function difficult_start!(r, x, y)
-    x_start = 0
-    y_start = 0
-    while x_start != x | y_start != y
-        if !isborder(r, Nord) & y_start != y 
-            y_start += 1
-            move!(r, Nord)
-        elseif !isborder(r, Ost) & x_start != x
-            x_start += 1
-            move!(r, Ost)
-        end 
-    end
-    print(x_start, y_start)
+function point_a!(r)
+    road, a, b = difficult_coord!(r)
+    square!(r)
+    difficult_start!(r, road)
 end
 
-x, y = difficult_coord!(r)
-print(x, y)
-difficult_start!(r, x, y)
+
+function point_b!(r)
+    road, a, b = difficult_coord!(r)
+    do_dot!(r, Ost, a)
+    do_dot!(r, Nord, b)
+    along!(r, Nord)
+    do_dot!(r, Ost, a)
+    along!(r, Ost)
+    along!(r, Sud)
+    do_dot!(r, Nord, b)
+    along!(r, Sud)
+    difficult_start!(r, road)
+end

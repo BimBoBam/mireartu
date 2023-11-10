@@ -19,28 +19,19 @@ end
 
 function minisquare!(r)
     if isborder(r, Nord)
-        for i in [(Ost,Nord), (Nord,West), (West,Sud), (Sud,Ost)]
-            a, b = i
-            while isborder(r, b)
-                putmarker!(r)
-                move!(r, a)
-            end
-            putmarker!(r)
-            move!(r, b)
-        end
+        sid =  [(Ost,Nord), (Nord,West), (West,Sud), (Sud,Ost)]
     else
-        for i in [(Ost,Sud), (Sud,West), (West,Nord), (Nord,Ost)]
-            a, b = i
-            while isborder(r, b)
-                putmarker!(r)
-                move!(r, a)
-            end
-            putmarker!(r)
-            move!(r, b)
-        end
+        sid = [(Ost,Sud), (Sud,West), (West,Nord), (Nord,Ost)]
     end
-
-end
+    for i in sid
+        a, b = i
+        while isborder(r, b)
+            putmarker!(r)
+            move!(r, a)
+        end
+        putmarker!(r)
+        move!(r, b)
+    end
 
 
 function points_around_rectangle!(r)
