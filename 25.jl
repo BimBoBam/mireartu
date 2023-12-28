@@ -1,7 +1,7 @@
 using HorizonSideRobots
 include("func_for_all.jl")
 condition = false
-r = Chess_Robot(Robot("ss/center.sit",animate = true),condition)
+r = Chess_Robot(Robot("sits/center.sit",animate = true),condition)
 
 function task25!(robot,side)
 

@@ -16,21 +16,21 @@ function task28!(n)
     return fib2
 end
 
-function task28_re!(n)
+function task28r!(n)
     if n <= 1
         return n
     else
-        return (task28_re!(n-1) + task28_re!(n-2))
+        return (task28r!(n-1) + task28r!(n-2))
     end
 end
 
-function task28_re_me!(n, memo = Dict())
+function task28re1!(n, memo = Dict())
     if n <= 1
         return n
     elseif haskey(memo, n)
         return memo[n]
     else
-        memo[n] = task28_re_me!(n-1, memo) + task28_re_me!(n-2, memo)
+        memo[n] = task28re1!(n-1, memo) + task28re1!(n-2, memo)
         return memo[n]
     end
 end

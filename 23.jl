@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = Robot("ss/center.sit",animate = true)
+r = Robot("sits/center.sit",animate = true)
 function to_symm_pos!(robot, side)
     if isborder(robot, side)
     re_along!(robot, inverse(side))

@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = Chess_Robot(Robot("ss/15x15.sit",animate = true), true)
+r = Chess_Robot(Robot("sits/15x15.sit",animate = true), true)
 function task9!(robot)
     x = go_along_shag!(robot, West)
     y = go_along_shag!(robot, Sud)

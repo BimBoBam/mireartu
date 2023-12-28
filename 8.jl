@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = Robot("ss/pusto.sit", animate = true)
+r = Robot("sits/pusto.sit", animate = true)
 
 function fast_move_marker!(stop_condition::Function, robot, b, side)
 

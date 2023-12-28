@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = Robot("ss/center.sit",animate = true)
+r = Robot("sits/center.sit",animate = true)
 function slon_cross!(robot, x_side, y_side)
     shag = 0
     raz = 0

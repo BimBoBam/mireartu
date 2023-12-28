@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = Robot("ss/zd5.sit",animate=true)
+r = Robot("sits/zd5.sit",animate=true)
 function task5!(robot)
 
     side1 = Nord

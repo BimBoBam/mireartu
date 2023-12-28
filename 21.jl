@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = BorderRobot(Robot("ss/pereprava21.sit",animate=true))
+r = BorderRobot(Robot("sits/pereprava21.sit",animate=true))
 function move_with_barrier!(robot, side, n::Integer)
     if n == 0
         return

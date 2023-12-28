@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("func_for_all.jl")
 using HorizonSideRobots
 sides = [Ost, Sud, West, Nord]
-r = Robot("ss/inf_hor_border.sit",animate=true)
+r = Robot("sits/inf_hor_border.sit",animate=true)
 function proverka_sten(robot)
     for s in sides
         if isborder(robot,s)

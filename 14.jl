@@ -1,6 +1,6 @@
 using HorizonSideRobots
 include("func_for_all.jl")
-r = BorderRobot(Chess_Robot(Robot("ss/pereprava14.sit",animate = true), true))
+r = BorderRobot(Chess_Robot(Robot("sits/pereprava14.sit",animate = true), true))
 
 function snake_border!(robot; start_side, ortogonal_side)
     s = start_side

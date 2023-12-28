@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("func_for_all.jl")
 using HorizonSideRobots
 sides = [Ost, Sud, West, Nord]
-r = Robot("ss/center.sit",animate = true)
+r = Robot("sits/center.sit",animate = true)
 function to_border!(robot)
     along!(robot, Nord)
 end

@@ -1,7 +1,7 @@
 using HorizonSideRobots
 include("func_for_all.jl")
 N = 1
-r = Robot("ss/center.sit", animate=true)
+r = Robot("sits/center.sit", animate=true)
 function task10!(robot)
     dom = to_corner!(robot::Robot, Sud, West)
     robot = ChessRobotN(robot, N)
